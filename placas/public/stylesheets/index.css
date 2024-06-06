@@ -1,0 +1,95 @@
+
+body {
+    
+    font-family: 'Inter', sans-serif;
+    background-color: rgba(235, 241, 252, 1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+    h1 {
+        font-size: 2em; /* Use relative units */
+        font-weight: 700;
+        color: rgba(27, 79, 168, 1);
+    }
+
+    h5 {
+        font-weight: 600;
+        color: rgba(68, 129, 235, 0.75);
+    }
+
+    input[type="text"] {
+        font-weight: 500;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+        width: 100%;
+        padding: 1em; /* Use relative units */
+        box-sizing: border-box;
+        border: 2px solid lightgray;
+        border-radius: 4px;
+        flex-grow: 1;
+        border: none;
+    }
+
+    button {
+        font-weight: 600;
+        background-color: rgba(68, 129, 235, 1);
+        color: white;
+        box-shadow: 0 12px 21px rgba(0,0,0,0.10);
+        padding: 1em; /* Use relative units */
+        border: none;
+        cursor: pointer;
+    }
+
+    div[class="buscar"]{
+        display: flex;
+        width: 100%;
+        box-sizing: border-box;
+        border-radius: 4px;
+    }
+
+    footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: white;
+        color: black;
+        text-align: center;
+        padding: 2em; /* Use relative units */
+        font-family: 'Inter', sans-serif;
+    }
+
+    /* Media query for mobile devices */
+    @media (max-width: 768px) {
+        body {
+            
+            flex-direction: column;
+            align-items: center; 
+            justify-content: center; /* Centra los elementos verticalmente */
+        }
+
+        h1 {
+            font-size: 1.5em;
+        }
+
+        h5 {
+            font-size: 0.875em;
+        }
+
+        .imagen-derecha {
+            display: none;
+        }
+
+        div[class="buscar"] {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 1em;
+        }
+    }
+

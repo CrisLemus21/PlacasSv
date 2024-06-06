@@ -1,0 +1,41 @@
+<!-- resultados.ejs -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="stylesheets/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center my-4" style="color: white;"><%= title %></h1>
+        <% if (data) { %>
+            <% data.forEach(function(item) { %>
+                <div class="item">
+                    <h2>Número de Placa: <%= item.numPlaca %></h2>
+                    <p>Ubicación: <%= item.ubicacion %></p>
+                    <p>Fecha: <%= item.fecha %></p>
+                    <p>Contacto: <%= item.contacto %></p>
+                    <img src="/uploads/<%= item.imagen %>" alt="Imagen de la placa">
+                </div>
+            <% }); %>
+        <% } else { %>
+            <h1 class="text-center">No se encontraron resultados.</h1>
+        <% } %>
+        <footer>
+            <ul class="nav justify-content-center">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/">Regresar a Inicio➜</a>
+                </li>
+            </ul>
+        </footer>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
+

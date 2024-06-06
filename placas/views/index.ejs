@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="stylesheets/index.css">
+  <title>Document</title> 
+</head>
+<body>
+  <div style="align-items: center;">
+    <div >
+      <h1>Encuentra tu placa SV</h1>
+      <br> <br>
+      <div style="display: flex;">
+        <div>
+          <div style="display:  flex; ">
+            <img src="images/che.png" alt="" style="margin: 4px;"">
+            <h5>Ingresa tu número de placa para realizar búsqueda</h5>
+          </div>
+          <br>
+          <div style="display:  flex; ">
+            <img src="images/che.png" alt="" style="margin: 4px;"">
+            <h5>Crea una publicacion para ayudar a la comunidad</h5>
+          </div>
+        </div>
+        <div style="margin-top: -5cm; margin-left: 1cm;">
+          <img src="images/index.png" alt="" class="imagen-derecha">
+        </div>
+      </div>
+    </div>
+    <form action="/" method="get" style="margin-right: 3cm;">
+      <div class="buscar" > 
+        <input type="text" placeholder="Número de placa, Ejemplo: P159988" name="buscar" maxlength="8" oninput="this.value = this.value.toUpperCase()">
+        <button type="submit" value="buscar">Buscar</button>
+      </div>
+    </form>
+  </div>
+</body>
+<footer>
+  <ul class="nav justify-content-center">
+    <li class="nav-item">
+      <a class="nav-link active" aria-current="page" href="/publicar">Crear publicacion ➜ </a>
+    </li>
+  </ul>
+</footer>
+</html>
+
+

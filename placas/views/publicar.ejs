@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Título de tu página</title>
+    <link rel="stylesheet" href="stylesheets/publicar.css">
+    <!-- Incluir SweetAlert2 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="publication">
+            <h2>Crea una publicación</h2>
+            <p>Las personas pueden ayudarte a encontrar tu placa</p>
+            <div>
+                <img src="images/pngcar.png" alt="imng">
+            </div>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/" style="color:#007bff;">Regresar a Inicio ➜ </a>
+            </li>
+        </div>
+
+        <div class="info">
+            <h2>Información General</h2>
+            <form id="publicationForm" action="/publicar" method="post" enctype="multipart/form-data">
+                <label for="plate">Número de placa:</label>   
+                <input type="text" id="placa" name="placa" placeholder="Número de placa, Ejemplo: P159988" maxlength="8" oninput="this.value = this.value.toUpperCase()" required>
+                <label for="address">Dirección:</label>
+                <input type="text" id="ubicacion" name="ubicacion" placeholder="Ej: San Salvador, Km 50" required>
+                <label for="date">Fecha:</label>
+                <input type="date" id="Fecha" name="Fecha" required>
+                <label for="contact">Contacto:</label>
+                <input type="tel" id="Contacto" name="Contacto" placeholder="Ej: +503 0000-0000" required>
+                <label for="image">Imagen (png, jpg, jpeg ):</label>
+                <input type="file" id="image" name="image" accept="image/*" required>
+                
+                <button type="submit" class="btn btn-primary">Publicar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Incluir SweetAlert2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+    <script>
+        document.getElementById('publicationForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const formData = new FormData(this);
+
+            fetch('/publicar', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.error) {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error',
+                        text: data.error,
+                        confirmButtonText: 'Aceptar'
+                    });
+                } else {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Éxito',
+                        text: 'La placa se ha publicado correctamente',
+                        confirmButtonText: 'Aceptar'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            window.location.href = '/';
+                        }
+                    });
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: 'Ocurrió un error al procesar tu solicitud',
+                    confirmButtonText: 'Aceptar'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

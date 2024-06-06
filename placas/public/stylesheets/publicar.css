@@ -1,0 +1,83 @@
+/* Estilos generales */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: rgba(235, 241, 252, 1);
+    
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Estilos para la sección de publicación */
+.publication {
+    
+    width: 50%;
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    height: 59vh;
+    
+}
+
+.image-container {
+    width: 100%;
+    height: 200px;
+    background-color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #57a3f5;
+    color: #fff;
+    padding: 10px 20px;
+    margin-top: 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* Estilos para la sección de información general */
+.info {
+    width: 45%;
+    background-color: #ffffff;
+    padding: 40px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    height: 55.2vh;
+}
+
+form {
+    display: grid;
+    gap: 10px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.btn2 {
+    
+    background-color: #fffefe00;
+    color: #0922ff;
+    padding: 10px 20px;
+    margin-top: 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    
+}
